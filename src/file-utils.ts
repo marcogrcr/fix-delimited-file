@@ -9,11 +9,7 @@ export interface GetFileLinesInput {
   readonly filePath: string;
 }
 
-/**
- * Returns an async generator that yields lines of a text file.
- * @param input The function's input.
- * @return {AsyncGenerator<string>}
- */
+/** Returns an async generator that yields lines of a text file. */
 export async function *getFileLines(input: GetFileLinesInput): AsyncGenerator<string> {
     const { encoding, filePath } = input;
     const stream = createReadStream(filePath, { encoding });
