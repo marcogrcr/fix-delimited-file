@@ -26,8 +26,8 @@ describe("args", () => {
           "--output: The path to the output file to produce.\n" +
           '--unprocessed: The path to the file that contains unprocessed lines. Defaults to: "unprocessed.txt"\n' +
           '--input-metadata: The path to the file that contains metadata about the input file. Defaults to: "input-metadata.json"\n' +
-          '--input-delimiter: The input file value delimiter. Defaults to: "|"\n' +
-          '--output-delimiter: The output file value delimiter. Defaults to: "\t"\n' +
+          '--input-delimiter: The input file column delimiter. Defaults to: "|"\n' +
+          '--output-delimiter: The output file column delimiter. Defaults to: "\t"\n' +
           '--delimiter-replacement: The value to replace input file delimiters when they\'re used in a string value. Defaults to: " "\n' +
           "--number-of-columns: The number of columns per row in the input file. It omitted, it's auto-detected from the first line.\n" +
           "--number-of-rows: The maximum number of rows to write to the output file. If omitted there's no limit.\n" +

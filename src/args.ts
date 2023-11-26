@@ -79,14 +79,14 @@ const ARGUMENT_METADATA_MAP: ArgumentMetadata = {
   "input-delimiter": {
     alias: "inputDelimiter",
     default: "|",
-    doc: "The input file value delimiter.",
+    doc: "The input file column delimiter.",
     placeholder: "delimiter",
     type: "string",
   },
   "output-delimiter": {
     alias: "outputDelimiter",
     default: "\t",
-    doc: "The output file value delimiter.",
+    doc: "The output file column delimiter.",
     placeholder: "delimiter",
     type: "string",
   },
