@@ -1,5 +1,5 @@
-import { describe, expect, it } from "vitest";
 import { basename } from "node:path";
+import { describe, expect, it } from "vitest";
 
 import { getFileLines } from "../src/file-utils.js";
 import { LATIN_1, NO_NEW_LINE, THREE_LINES } from "./test-files/index.js";
