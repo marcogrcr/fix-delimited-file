@@ -1,0 +1,4 @@
+name|force_alignment
+Darth Vader|Dark
+Luke Skywalker|Light
+Obi Wan Kenobi|Light

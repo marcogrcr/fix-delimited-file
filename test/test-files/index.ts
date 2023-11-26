@@ -14,3 +14,6 @@ export const NO_NEW_LINE = join(__dirname, "no-new-line.txt");
 
 /** A file with three lines. */
 export const THREE_LINES = join(__dirname, "three-lines.txt");
+
+/** A file with Star Wars characters and their force alignments. */
+export const STAR_WARS_CHARACTERS = join(__dirname, "star-wars-characters.txt");
