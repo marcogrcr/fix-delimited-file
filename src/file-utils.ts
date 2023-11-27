@@ -10,14 +10,16 @@ export interface GetFileLinesInput {
 }
 
 /** Returns an async generator that yields lines of a text file. */
-export async function *getFileLines(input: GetFileLinesInput): AsyncGenerator<string> {
-    const { encoding, filePath } = input;
-    const stream = createReadStream(filePath, { encoding });
-    const readLine = createInterface({ input: stream, crlfDelay: Infinity });
+export async function* getFileLines(
+  input: GetFileLinesInput
+): AsyncGenerator<string> {
+  const { encoding, filePath } = input;
+  const stream = createReadStream(filePath, { encoding });
+  const readLine = createInterface({ input: stream, crlfDelay: Infinity });
 
-    for await (const line of readLine) {
-        yield line;
-    }
+  for await (const line of readLine) {
+    yield line;
+  }
 
-    readLine.close();
+  readLine.close();
 }

@@ -148,7 +148,7 @@ describe("args", () => {
           "--input-encoding",
           "latin1",
           "--output-encoding",
-          "ucs2"
+          "ucs2",
         ]);
 
         expect(actual).toEqual(expected);

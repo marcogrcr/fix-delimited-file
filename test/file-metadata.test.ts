@@ -35,7 +35,9 @@ describe("file-metadata", () => {
         expect(actual.maxLength).toBe(6);
         expect(actual.name).toBe("col");
         expect(actual.unbounded).toBe(false);
-        expect(actual.uniqueValues).toStrictEqual(new Set(["value1", "value2"]));
+        expect(actual.uniqueValues).toStrictEqual(
+          new Set(["value1", "value2"])
+        );
       });
 
       const missingFieldTestCases: readonly (keyof typeof validObj)[] = [
@@ -134,7 +136,9 @@ describe("file-metadata", () => {
           expect(forceAlignCol.maxLength).toBe(5);
           expect(forceAlignCol.name).toBe("force_alignment");
           expect(forceAlignCol.unbounded).toBe(false);
-          expect(forceAlignCol.uniqueValues).toStrictEqual(new Set(["Dark", "Light"]));
+          expect(forceAlignCol.uniqueValues).toStrictEqual(
+            new Set(["Dark", "Light"])
+          );
         });
       });
 
@@ -158,11 +162,9 @@ describe("file-metadata", () => {
           expect(forceAlignCol.maxLength).toBe(15);
           expect(forceAlignCol.name).toBe("col_2");
           expect(forceAlignCol.unbounded).toBe(false);
-          expect(forceAlignCol.uniqueValues).toStrictEqual(new Set([
-            "force_alignment",
-            "Dark",
-            "Light",
-          ]));
+          expect(forceAlignCol.uniqueValues).toStrictEqual(
+            new Set(["force_alignment", "Dark", "Light"])
+          );
         });
       });
 
@@ -182,13 +184,16 @@ describe("file-metadata", () => {
 
           const actual = await FileMetadata.create(input);
 
-          const expectEqual = (expected: ColumnMetadata, actual: ColumnMetadata) => {
+          const expectEqual = (
+            expected: ColumnMetadata,
+            actual: ColumnMetadata
+          ) => {
             expect(actual.cardinality).toBe(expected.cardinality);
             expect(actual.maxLength).toBe(expected.maxLength);
             expect(actual.name).toBe(expected.name);
             expect(actual.unbounded).toBe(expected.unbounded);
             expect(actual.uniqueValues).toStrictEqual(expected.uniqueValues);
-          }
+          };
           expect(actual.columns.length).toBe(expected.columns.length);
           expectEqual(expected.columns[0], actual.columns[0]);
           expectEqual(expected.columns[1], actual.columns[1]);

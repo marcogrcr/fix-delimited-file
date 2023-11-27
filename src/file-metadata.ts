@@ -82,7 +82,7 @@ export class FileMetadata {
   /** Invoked by {@link JSON.stringify}. */
   toJSON(): Record<string, unknown> {
     return {
-      columns: this.columns.map(x => x.toJSON()),
+      columns: this.columns.map((x) => x.toJSON()),
     };
   }
 
