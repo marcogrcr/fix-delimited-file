@@ -212,7 +212,7 @@ export function parse(argv: readonly string[]): ArgumentMetadata {
 }
 
 /** Gets the help string. */
-export function getHelp() {
+export function getHelp(): string {
   const argSummary = Object.entries(ARGUMENT_METADATA_MAP).map(
     ([name, { placeholder, required }]) => {
       let arg = `--${name} {${placeholder}}`;

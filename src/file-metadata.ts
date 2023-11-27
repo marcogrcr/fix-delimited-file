@@ -113,7 +113,10 @@ export class FileMetadata {
     }
   }
 
-  static async #setCache(filePath: string, metadata: FileMetadata) {
+  static async #setCache(
+    filePath: string,
+    metadata: FileMetadata
+  ): Promise<void> {
     await writeFile(filePath, JSON.stringify(metadata.toJSON(), null, 2));
   }
 }
