@@ -15,15 +15,11 @@ export interface CreateInput extends GetFileLinesInput {
 
 /** Contains the metadata of a delimited file. */
 export class FileMetadata {
-  readonly #columns: ColumnMetadata[];
-
-  private constructor(columns: ColumnMetadata[]) {
-    this.#columns = columns;
-  }
-
-  /** The columns' metadata. */
-  get columns(): readonly ColumnMetadata[] {
-    return this.#columns;
+  /**
+   * Creates a new instance of the {@link FileMetadata} class.
+   * @param columns The columns' metadata.
+   */
+  private constructor(readonly columns: readonly ColumnMetadata[]) {
   }
 
   /** Create a new instance of {@link FileMetadata}. */
@@ -124,7 +120,6 @@ export class FileMetadata {
 /** Contains the metadata of a delimited file column. */
 export class ColumnMetadata {
   #maxLength = 0;
-  #name = "";
   #unbounded = false;
   #uniqueValues = new Set<string>();
 
@@ -132,8 +127,7 @@ export class ColumnMetadata {
    * Creates a new instance of the {@link ColumnMetadata} class.
    * @param name The column name.
    */
-  constructor(name: string) {
-    this.#name = name;
+  constructor(readonly name: string) {
   }
 
   /** The column's cardinality. */
@@ -144,11 +138,6 @@ export class ColumnMetadata {
   /** The maximum length of the column. */
   get maxLength(): number {
     return this.#maxLength;
-  }
-
-  /** The column's name. */
-  get name(): string {
-    return this.#name;
   }
 
   /** Whether the column is unbounded. */
