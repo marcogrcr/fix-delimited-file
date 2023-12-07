@@ -16,7 +16,7 @@ describe("file-utils", () => {
           actual.push(".");
         }
 
-        expect(actual).toEqual(["line 1", ".", "line 2", ".", "line 3", "."]);
+        expect(actual).toStrictEqual(["line 1", ".", "line 2", ".", "line 3", "."]);
       });
     });
 
@@ -29,7 +29,7 @@ describe("file-utils", () => {
           actual.push(line);
         }
 
-        expect(actual).toEqual(["begin", "end"]);
+        expect(actual).toStrictEqual(["begin", "end"]);
       });
     });
 
@@ -43,7 +43,7 @@ describe("file-utils", () => {
           actual.push(line);
         }
 
-        expect(actual).toEqual(["English", "Español"]);
+        expect(actual).toStrictEqual(["English", "Español"]);
       });
     });
   });

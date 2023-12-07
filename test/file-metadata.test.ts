@@ -87,7 +87,7 @@ describe("file-metadata", () => {
           unbounded: false,
           uniqueValues: ["value1", "value2"],
         });
-        expect(actual).toEqual(expected);
+        expect(actual).toStrictEqual(expected);
       });
     });
 
