@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 
 import { getAnchorColumns } from "../src/anchor-column.js";
-import { ColumnMetadata } from "../src/file-metadata.js";
+import { createColumnMetadata } from "./factories.js";
 
 describe("anchor-column", () => {
   describe("getAnchorColumns", () => {
@@ -84,16 +84,3 @@ describe("anchor-column", () => {
     });
   });
 });
-
-function createColumnMetadata({
-  unbounded,
-}: {
-  unbounded: boolean;
-}): ColumnMetadata {
-  return ColumnMetadata.fromJson({
-    maxLength: 0,
-    name: "",
-    unbounded,
-    uniqueValues: [],
-  });
-}
