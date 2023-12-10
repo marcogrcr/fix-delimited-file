@@ -1,6 +1,6 @@
 import type { FileMetadata } from "./file-metadata.js";
 
-interface ParseOutput {
+export interface ParseOutput {
   /**
    * The parsed columns if the specified line was parsed successfully.
    * `null` otherwise.
