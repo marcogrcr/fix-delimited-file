@@ -1,5 +1,6 @@
 import { readFile, writeFile } from "node:fs/promises";
 
+import { AnchorColumn, getAnchorColumns } from "./anchor-column.js";
 import { GetFileLinesInput, getFileLines } from "./file-utils.js";
 
 export interface CreateInput extends GetFileLinesInput {
@@ -15,11 +16,14 @@ export interface CreateInput extends GetFileLinesInput {
 
 /** Contains the metadata of a delimited file. */
 export class FileMetadata {
+  readonly anchorColumns: readonly AnchorColumn[];
+
   /**
    * Creates a new instance of the {@link FileMetadata} class.
    * @param columns The columns' metadata.
    */
-  private constructor(readonly columns: readonly ColumnMetadata[]) {
+  constructor(readonly columns: readonly ColumnMetadata[]) {
+    this.anchorColumns = getAnchorColumns(columns);
   }
 
   /** Create a new instance of {@link FileMetadata}. */
