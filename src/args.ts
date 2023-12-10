@@ -152,7 +152,7 @@ const ALLOWED_ENCODINGS = new Set<BufferEncoding>([
 ]);
 
 /** Parses the program's arguments. */
-export function parse(argv: readonly string[]): ArgumentMetadata {
+export function parse(argv: readonly string[]): Arguments {
   const alias = Object.entries(ARGUMENT_METADATA_MAP).reduce<
     Record<string, string>
   >((obj, [name, { alias }]) => {
@@ -208,7 +208,7 @@ export function parse(argv: readonly string[]): ArgumentMetadata {
     delete parsedArgs[name];
   }
 
-  return parsedArgs as unknown as ArgumentMetadata;
+  return parsedArgs as unknown as Arguments;
 }
 
 /** Gets the help string. */
