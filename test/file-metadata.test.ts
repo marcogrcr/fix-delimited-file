@@ -1,4 +1,3 @@
-import { rm } from "node:fs/promises";
 import { afterAll, beforeEach, describe, expect, it, vi } from "vitest";
 
 import {
@@ -8,6 +7,7 @@ import {
 } from "../src/file-metadata.js";
 import * as fileUtils from "../src/file-utils.js";
 import { STAR_WARS_CHARACTERS } from "./test-files/index.js";
+import { tryDeleteFile } from "./utils.js";
 
 vi.mock("../src/file-utils.js");
 const getFileLinesMock = vi.mocked(fileUtils.getFileLines);
@@ -203,13 +203,3 @@ describe("file-metadata", () => {
     });
   });
 });
-
-async function tryDeleteFile(filePath: string): Promise<void> {
-  try {
-    await rm(filePath);
-  } catch (e) {
-    if (e instanceof Error && (e as NodeJS.ErrnoException).code !== "ENOENT") {
-      throw e;
-    }
-  }
-}

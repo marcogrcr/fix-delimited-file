@@ -2,7 +2,7 @@ import { beforeEach, describe, expect, it } from "vitest";
 
 import { FileMetadata } from "../src/file-metadata.js";
 import { LineParser } from "../src/line-parser.js";
-import { createColumnMetadata } from "./factories.js";
+import { createColumnMetadata } from "./utils.js";
 
 describe("LineParser", () => {
   describe("parse", () => {

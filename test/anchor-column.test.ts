@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 
 import { getAnchorColumns } from "../src/anchor-column.js";
-import { createColumnMetadata } from "./factories.js";
+import { createColumnMetadata } from "./utils.js";
 
 describe("anchor-column", () => {
   describe("getAnchorColumns", () => {
