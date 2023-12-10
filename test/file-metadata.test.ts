@@ -6,8 +6,8 @@ import {
   CreateInput,
   FileMetadata,
 } from "../src/file-metadata.js";
-import { STAR_WARS_CHARACTERS } from "./test-files/index.js";
 import * as fileUtils from "../src/file-utils.js";
+import { STAR_WARS_CHARACTERS } from "./test-files/index.js";
 
 vi.mock("../src/file-utils.js");
 const getFileLinesMock = vi.mocked(fileUtils.getFileLines);
